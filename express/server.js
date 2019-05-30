@@ -6,7 +6,7 @@ const log = require('./utils/log');
 
 const { setSecureHeaders } = require('./middleware');
 
-const PORT = 3000;
+const PORT = (process.env.NODE_ENV === 'production') ? 3000 : 3001
 
 const app = express();
 
