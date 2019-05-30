@@ -2,6 +2,9 @@ version: '3'
 services:
   node:
     build: ./express
+    depends_on:
+    - "redis"
+    - "elastic"
     ports:
     - "3000:3000"
   
@@ -13,6 +16,25 @@ services:
     ports:
     - "6379:6379"
 
+  elastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.1.1
+    environment:
+      - node.name=elastic-cluster
+      - cluster.initial_master_nodes=elastic-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+      - http.host=0.0.0.0
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+    - "9200:9200"
+
 volumes:
   redis-data:
+  esdata:
   
