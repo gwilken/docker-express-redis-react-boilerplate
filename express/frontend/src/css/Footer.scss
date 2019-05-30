@@ -1,0 +1,10 @@
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+  ul.links-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
