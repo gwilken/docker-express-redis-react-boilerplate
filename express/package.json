@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/gwilken/express-boilerpolate#readme",
   "dependencies": {
+    "@elastic/elasticsearch": "^7.1.0",
     "express": "^4.16.4",
     "nodemon": "^1.18.10",
     "redis": "^2.8.0"

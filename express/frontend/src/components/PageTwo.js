@@ -1,12 +1,15 @@
 import React from 'react'
-import Card from './Card'
 
-const cards = [{title: 'card d'}, {title: 'card e'}, {title: 'card f'}]
+//import axios from 'axios'
+
+// axios.get(url).then(response => {
+//   this.isLoading = false
+//   if (response.status >= 200 && response.status < 400) {
 
 const PageTwo = (props) => {
   return (
     <div>
-      { cards.map((elem, index) => <Card title={elem.title} key={elem.title + index} />) }
+      
     </div>
   )
 }
